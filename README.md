@@ -6,7 +6,7 @@ Problem statement: Read files from GCS and write file data to BQ.Function to rea
 
 This can achieved through different CDD levels. Each level adding more features of implementation
 
-CDD0 - Hardcoded appraoch without using any configuration'
+CDD0 - Hardcoded appraoch without using any configuration
 
 CDD1- Added a config file and reading parameters from config to address usecase. Read CSV file from GCS and write to BQ
 
