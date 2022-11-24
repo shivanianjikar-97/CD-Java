@@ -2,6 +2,7 @@ package cdd3.impl;
 
 import cdd3.factory.FileReaderFactory;
 import cdd3.factory.TableWriterFactory;
+import cdd3.factory.FileWriterFactory;
 import cdd3.iface.IJob;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
@@ -24,7 +25,10 @@ public class DefaultJob extends IJob {
         dataset = dataset.selectExpr(properties.getProperty("columnNames"));
 
         //persist files
-        TableWriterFactory.getFileWriter(properties).write(dataset, properties);
+        if("table".equalsIgnoreCase(properties.getProperty("targetType").toString())){
+            TableWriterFactory.getFileWriter(properties).write(dataset, properties);
+        } else if("file".equalsIgnoreCase(properties.getProperty("targetType").toString())){
+            FileWriterFactory.getFileWriter(properties).write(dataset, properties);
+        }
     }
-
 }
