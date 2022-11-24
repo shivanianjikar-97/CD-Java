@@ -1,6 +1,6 @@
 # CDD-Java
 
-Config Driven Development - to explain CDD approach, effeciently and implement it using Java
+Config Driven Development - Template to explain CDD approach, effeciently and implement it using different levels of CDD 
 
 Problem statement: Read files from GCS and write file data to BQ.Function to read file and write data using hard coded connection params
 
